@@ -1,23 +1,17 @@
-# GoogleMaps-Find-Routes
+# GoogleMapsRoutes
 
 
 
 
-1)
-
-Add the following dependencies in you app level gradle file if not exists:
-
+## 1) Add the following dependencies in you app level gradle file if not exists:
+```java
     implementation 'com.google.android.gms:play-services-maps:16.1.0'
     implementation 'com.github.jd-alexander:library:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
+```
 
    
-
-------------------------------------------------------------------------------------------------------------
-
-2)
-
-Get Your Google Maps Api Key From Google Cloud Platform.
+## 2) Get Your Google Maps Api Key From Google Cloud Platform.
   
   1) login to your google account and follow this link: https://console.cloud.google.com/google/maps-apis/
   2) Must enable the following services:
@@ -27,12 +21,9 @@ Get Your Google Maps Api Key From Google Cloud Platform.
       3) Enable Billing.
 
 
--------------------------------------------------------------------------------------------------------------
 
-3)
-
-Add the following permissions and meta-data tags in application  tag in your menifest file:
-
+## 3) Add the following permissions and meta-data tags in application  tag in your menifest file:
+```java
 	<uses-permission android:name="android.permission.INTERNET" />
 	 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
         <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -47,35 +38,27 @@ Add the following permissions and meta-data tags in application  tag in your men
    
     <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+```
 
 
-------------------------------------------------------------------------------------------------------------
+## 4) Add the following fragment in your activity_main.xml file to show Map.
 
-
-
-4)
-
-Add the following fragment in your activity_main.xml file to show Map.
+```xml
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/map"
-    tools:context=".MainActivity"
-    android:name="com.google.android.gms.maps.SupportMapFragment" />
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/map"
+              tools:context=".MainActivity"
+              android:name="com.google.android.gms.maps.SupportMapFragment" />
+```
 
 
+## 5) Update the your MainActivity.java file with the following code:
 
-------------------------------------------------------------------------------------------------------------
-
-
-5)
-
-Update the your MainActivity.java file with the following code:
-
-    
-     public class MainActivity extends FragmentActivity implements OnMapReadyCallback,
+```java 
+   public class MainActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.OnConnectionFailedListener, RoutingListener {
 
     //google map object
@@ -277,12 +260,17 @@ Update the your MainActivity.java file with the following code:
 
      }
     }
+    
+  ```
    
------------------------------------------------------------------------------------------------------------------
+   
+   
+   
+   
+<h2>Created and maintained by:</h2>
+<p>Er.Prem singh daksha  premsingh8171@gmail.com</p>
+<p><a href="https://www.linkedin.com/in/prem-singh-daksha-82az/"> <img src="https://github.com/anitaa1990/DeviceInfo-Sample/blob/master/media/linkedin-icon.png" alt="Linkedin" style="max-width:100%;"> </a></p>
 
-
-
-6) Test your App and Enjoy :)
 
 
 
